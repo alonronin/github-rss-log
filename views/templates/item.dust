@@ -1,0 +1,9 @@
+<li>
+    <blockquote>{title}</blockquote>
+
+    <p>{description|s}</p>
+
+    <p><a href="{link}" target="_blank"><i class="icon-tag"></i> view commit</a> <code>{id}</code></p>
+
+    <hr>
+</li>

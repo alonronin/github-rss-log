@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Github Logs</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <h1>Sentr Github Logs - <small>latest 20 commits</small></h1>
+    </div>
+
+    <ul class="unstyled"></ul>
+</div>
+
+
+<script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/jquery.jfeed.js"></script>
+<script type="text/javascript" src="/js/dust-core-1.2.4.js"></script>
+<script type="text/javascript" src="/js/compiled_templates.js"></script>
+
+<script type="text/javascript">
+(function($, global){
+    $(function(){
+        jQuery.getFeed({
+            url: '/rss',
+            success: function(feed) {
+                $.each(feed.items, function(i, item){
+                    console.log(item)
+                    dust.render('item', item, function(err, html){
+                        $('ul').append(html)
+                    })
+                })
+            }
+        });
+    })
+})(jQuery, window);
+</script>
+</body>
+</html>
