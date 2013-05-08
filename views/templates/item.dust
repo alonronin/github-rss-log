@@ -1,7 +1,22 @@
 <li>
-    <blockquote>{title}</blockquote>
+    <blockquote>
+        <b>{title}</b> <br><br>
 
-    <p>{description|s}</p>
+        <p>
+            <img class="img-polaroid pull-left" style="margin-right: 10px" src="{thumbnail}" alt="{author.name}" width="30" height="30" />
+
+            <small class="pull-left">
+            {updated} <br>
+            by <a href="{author.uri}" target="_blank">{author.name}</a>
+            </small>
+
+            <div class="clearfix"></div>
+        </p>
+
+
+    </blockquote>
+
+    <p>{content|s}</p>
 
     <p><a href="{link}" target="_blank"><i class="icon-tag"></i> view commit</a> <code>{id}</code></p>
 
