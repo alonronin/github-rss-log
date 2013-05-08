@@ -19,6 +19,7 @@
                 dust.render('item', o, function(err, html){
                     if(!err) $('ul').append(html)
                 });
+
             });
         })
     })
