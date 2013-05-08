@@ -1,19 +1,25 @@
 {
-    "name": "github-logs",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "start": "node app"
-    },
-    "dependencies": {
-        "express": "~3.x.0",
-        "request": "",
-        "dustjs-linkedin": "~1.2.4",
-        "dustjs-helpers": "~1.1.1",
-        "consolidate": "~0.9.1"
-    },
-    "engines": {
-        "node": "0.10.x",
-        "npm": "1.2.x"
-    }
+  "name": "github-logs",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "~3.x.0",
+    "request": "",
+    "dustjs-linkedin": "~1.2.4",
+    "dustjs-helpers": "~1.1.1",
+    "consolidate": "~0.9.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-cssmin": "~0.6.0"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
 }

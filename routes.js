@@ -10,6 +10,7 @@ var rss = function(req, res, next){
 };
 
 app.get('/', function(req, res){
+    res.locals.development = 'development' == app.get('env');
     res.render('index');
 });
 

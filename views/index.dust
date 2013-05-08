@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title>Github Logs</title>
 
+    {?development}
     <link rel="stylesheet" href="/css/bootstrap.css"/>
     <link rel="stylesheet" href="/css/bootstrap-responsive.css"/>
+    {:else}
+    <link rel="stylesheet" href="/css/buit.min.css"/>
+    {/development}
 </head>
 <body>
 
@@ -17,38 +21,14 @@
     <ul class="unstyled"></ul>
 </div>
 
-
+{?development}
 <script type="text/javascript" src="/js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="/js/bootstrap.js"></script>
 <script type="text/javascript" src="/js/dust-core-1.2.4.js"></script>
 <script type="text/javascript" src="/js/compiled_templates.js"></script>
-
-<script type="text/javascript">
-(function($, global){
-    $(function(){
-        $.get('/rss', function(xml){
-            var items = [];
-            $(xml).find('entry').each(function(i, item){
-                var o = {
-                    id: $(this).find('id').text(),
-                    title: $(this).find('title').text(),
-                    link: $(this).find('link').attr('href'),
-                    updated: $(this).find('updated').text(),
-                    thumbnail: $(this).find('thumbnail').attr('url'),
-                    author: {
-                        name: $(this).find('author name').text(),
-                        uri: $(this).find('author uri').text()
-                    },
-                    content: $(this).find('content').text()
-                };
-
-                dust.render('item', o, function(err, html){
-                    if(!err) $('ul').append(html)
-                });
-            });
-        })
-    })
-})(jQuery, window);
-</script>
+<script type="text/javascript" src="/js/main.js"></script>
+{:else}
+<script type="text/javascript" src="/js/built.min.js"></script>
+{/development}
 </body>
 </html>
