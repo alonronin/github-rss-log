@@ -28,12 +28,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
+    require('./compile_templates');
     dust.optimizers.format = function(ctx, node) { return node };
 
     app.use(express.errorHandler());
 }
 
-require('./compile_templates');
 require('./routes');
 
 http.createServer(app).listen(app.get('port'), function () {
